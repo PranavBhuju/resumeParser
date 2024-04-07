@@ -32,13 +32,18 @@ export const ResumeDropzone = ({
   const [isHoveredOnDropzone, setIsHoveredOnDropzone] = useState(false);
   const [hasNonPdfFile, setHasNonPdfFile] = useState(false);
   const router = useRouter();
-
+  console.log(file)
   const hasFile = Boolean(file.name);
 
   const setNewFile = (newFile: File) => {
     if (file.fileUrl) {
       URL.revokeObjectURL(file.fileUrl);
     }
+    // const name = 'mangesh'
+    // const size = 10
+    // const fileUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+
+    // console.log("newFile:",newFile)
 
     const { name, size } = newFile;
     const fileUrl = URL.createObjectURL(newFile);

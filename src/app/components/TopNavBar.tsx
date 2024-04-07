@@ -10,7 +10,7 @@ export const TopNavBar = () => {
   const isHomePage = pathName === "/";
 
   return (
-    <header
+    <header 
       aria-label="Site Header"
       className={cx(
         "flex h-[var(--top-nav-bar-height)] items-center border-b-2 border-gray-100 px-3 lg:px-12",
@@ -43,15 +43,6 @@ export const TopNavBar = () => {
               {text}
             </Link>
           ))}
-          <div className="ml-1 mt-1">
-            <iframe
-              src="https://ghbtns.com/github-btn.html?user=xitanggg&repo=open-resume&type=star&count=true"
-              width="100"
-              height="20"
-              className="overflow-hidden border-none"
-              title="GitHub"
-            />
-          </div>
         </nav>
       </div>
     </header>
