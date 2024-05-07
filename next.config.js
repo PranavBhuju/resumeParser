@@ -13,6 +13,28 @@ const nextConfig = {
     config.resolve.alias.encoding = false;
     return config;
   },
+  async headers() {
+    return [
+      {
+        // Allow requests from the origin where your React application is hosted
+        source: '/',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: 'http://localhost:3000', // Replace with your React application's origin
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, OPTIONS, PUT, DELETE',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type, Authorization',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
